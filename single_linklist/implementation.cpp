@@ -14,12 +14,33 @@ node* next;
 
 } ;
 
+// creating linklist using recursion ;
+
+node* createlinkedlist(int arr[],int index , int size){
+
+    // base case 
+    if(index==size){
+        return NULL ;
+    }
+
+    node *temp ;
+    temp->next = createlinkedlist(arr, index+1,size);
+
+    return temp ;
+
+}
+
+
 int main()
 {
      node *head ; 
     head = NULL ;
      // insert elements  at begining 
      int arr[] = {2,4,6,8,10} ;
+
+
+        
+
        for(int i=0 ; i<5;i++){
      // if linklist does not exist 
      if(head == NULL){
@@ -34,7 +55,7 @@ int main()
 
        // insert at end 
 
-       node *tempptr =head ;
+       node *tempptr =head ; // creating a temprory pointer 
 
        // getting last node
        while(tempptr->next !=NULL){
@@ -42,15 +63,11 @@ int main()
        }
 
        // creating new node 
-       node *tail = new node(20);
+       
 
        // connecting 
-       tempptr->next=tail ;
-       tail->next=NULL ;
-
-
-
-
+       tempptr->next=new node(20);
+    
        // for printing 
 
        node *temp ; 
