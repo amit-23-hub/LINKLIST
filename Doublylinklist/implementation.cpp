@@ -49,6 +49,24 @@ int main()
       head = temp ;
  
 
+ // FOR INSERTING AT THE END OF THE NODE 
+
+  // handling the edge case ;
+  if(head ==  NULL){
+    head =  new node(15);
+  }
+
+
+  // TRAVERSONG THE LL TO THE END 
+   node *cur = head ;
+   while(cur->next != NULL){
+     cur = cur->next ;
+
+   }
+   temp = new node(20);
+   cur->next = temp ;
+   temp->pre = cur ;
+
   // printnig 
   printting(head);
 
